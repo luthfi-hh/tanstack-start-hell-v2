@@ -11,6 +11,7 @@ import {
   StickyNote,
   X,
 } from 'lucide-react'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,6 +38,9 @@ export default function Header() {
             />
           </Link>
         </h1>
+        <div className="ml-auto">
+          <LanguageSwitcher />
+        </div>
       </header>
 
       <aside

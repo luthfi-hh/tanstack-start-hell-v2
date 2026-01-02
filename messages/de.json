@@ -1,4 +1,19 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "example_message": "Guten Tag {username}"
+  "home_kicker": "Paraglide JS Beispiel",
+  "home_title": "Lokalisierte UI mit TanStack Start",
+  "home_lead": "Wechsle die Sprache im Header, um Texte, Daten und Zahlen sofort zu sehen.",
+  "home_locale_badge": "Aktive Sprache: {locale}",
+  "home_url_hint": "Lokalisierte Routen sehen so aus: /{locale}/...",
+  "home_card_messages_title": "Message Uebersetzungen",
+  "home_card_messages_body": "Der Text unten kommt aus messages/{locale}.json.",
+  "home_greeting": "Hallo {name}!",
+  "home_card_date_title": "Datumsformatierung",
+  "home_card_date_body": "Heute ist {date}.",
+  "home_card_number_title": "Zahlenformatierung",
+  "home_card_number_body": "Beispielumsatz: {amount}.",
+  "home_next_steps_title": "Als naechstes ausprobieren",
+  "home_next_steps_item_messages": "Fuege weitere Strings zu den Message-Dateien hinzu und fuehre paraglide-js compile aus.",
+  "home_next_steps_item_routes": "Erzeuge lokalisierte Routen automatisch unter /en und /de.",
+  "home_next_steps_item_formats": "Nutze Intl APIs oder ICU Nachrichten fuer Plurale und Formatierung."
 }
