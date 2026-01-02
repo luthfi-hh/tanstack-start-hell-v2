@@ -1,12 +1,21 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Scripts, createRootRoute, redirect } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
 
 import appCss from '../styles.css?url'
+import { shouldRedirect } from '@/paraglide/runtime'
 
 export const Route = createRootRoute({
+  beforeLoad: async () => {
+    if (typeof window === 'undefined') return;
+    const decision = await shouldRedirect({ url: window.location.href });
+
+    if (decision.redirectUrl) {
+      throw redirect({ href: decision.redirectUrl.href });
+    }
+  },
   head: () => ({
     meta: [
       {

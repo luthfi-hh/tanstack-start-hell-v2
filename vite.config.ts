@@ -8,7 +8,30 @@ import tailwindcss from '@tailwindcss/vite'
 import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
-  plugins: [paraglideVitePlugin({ project: './project.inlang', outdir: './src/paraglide' }),
+  plugins: [
+    paraglideVitePlugin({ 
+      project: './project.inlang', 
+      outdir: './src/paraglide',
+      outputStructure: 'message-modules',
+      cookieName: 'PARAGLIDE_LOCALE',
+      strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+      urlPatterns: [
+        {
+          pattern: '/',
+          localized: [
+            ['en', '/en'],
+            ['de', '/de'],
+          ],
+        },
+        {
+          pattern: '/:path(.*)?',
+          localized: [
+            ['en', '/en/:path(.*)?'],
+            ['de', '/de/:path(.*)?'],
+          ],
+        },
+      ],
+    }),
     devtools(),
     nitro(),
     // this is the plugin that enables path aliases
